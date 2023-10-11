@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
       li.appendChild(p);
       p.textContent = taskText;
       li.addEventListener("click", function () {
-        p.classList.toggle("checked");
+        p.classList.toggle("line-through");
         li.classList.toggle("checked");
       });
 
