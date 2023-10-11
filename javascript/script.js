@@ -27,9 +27,3 @@ function addTask(e) {
 function deleteTask(e) {
   e.target.remove();
 }
-
-list.addEventListener("click", function (e) {
-  if (e.target.tagName === li) {
-    e.target;
-  }
-});

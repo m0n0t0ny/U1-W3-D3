@@ -130,3 +130,7 @@ ul button {
 .fa-times {
   color: #f44336;
 }
+
+ul li:checked {
+  text-decoration: line-through;
+}
