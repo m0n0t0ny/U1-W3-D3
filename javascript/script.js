@@ -1,29 +1,29 @@
-window.onload = () => {
-  const form = document.getElementById("form");
-  form.onsubmit = function (e) {
-    e.preventDefault();
-  };
-};
+document.addEventListener("DOMContentLoaded", function () {
+  const taskInput = document.getElementById("task-input");
+  const addTaskButton = document.getElementById("add-task-button");
+  const taskList = document.getElementById("task-list");
 
-const taskInput = document.querySelector("#taskName");
-const submit = document.querySelector("#submit-new-task");
-const list = document.querySelector("#list-1");
+  addTaskButton.addEventListener("click", function () {
+    const taskText = taskInput.value;
+    if (taskText !== "") {
+      const li = document.createElement("li");
+      const p = document.createElement("p");
+      li.appendChild(p);
+      p.textContent = taskText;
+      li.addEventListener("click", function () {
+        p.classList.toggle("checked");
+        li.classList.toggle("checked");
+      });
 
-submit.addEventListener("click", addTask);
-list.addEventListener("click", deleteTask);
+      const deleteButton = document.createElement("i");
+      deleteButton.classList.add("fas", "fa-times");
+      deleteButton.addEventListener("click", function () {
+        taskList.removeChild(li);
+      });
 
-function addTask(e) {
-  if (taskInput.value != "") {
-    const li = document.createElement("li");
-    li.className = "list-item";
-    li.textContent = taskInput.value;
-    list.appendChild(li);
-    taskInput.value = "";
-  } else {
-    alert("Dai un nome alla task!");
-  }
-}
-
-function deleteTask(e) {
-  e.target.remove();
-}
+      li.appendChild(deleteButton);
+      taskList.appendChild(li);
+      taskInput.value = "";
+    }
+  });
+});

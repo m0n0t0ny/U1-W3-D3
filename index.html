@@ -30,30 +30,13 @@
     </header>
 
     <main>
-      <form id="form">
-        <input
-          type="text"
-          name="new-task"
-          for="add-new-task"
-          id="taskName"
-          placeholder="Nome della task"
-        />
-        <button id="submit-new-task" type="submit">Aggiungi</button>
-      </form>
-
-      <div class="lists-container">
-        <ul class="list" id="list-1">
-          <h3>Predefinita</h3>
-          <!-- <li class="list-item">
-            <button class="complete-mark" type="reset">
-              <i class="fas fa-check-circle" style="color: #4caf50"></i>
-            </button>
-            <p class="task-name">Task name</p>
-            <button class="delete-mark" type="reset">
-              <i class="fas fa-times-circle" style="color: #f44336"></i>
-            </button>
-          </li> -->
-        </ul>
+      <div class="create-task">
+        <input type="text" id="task-input" placeholder="Enter a new task" />
+        <button id="add-task-button">Add Task</button>
+      </div>
+      <div class="task-container">
+        <h3>TODO</h3>
+        <ul id="task-list"></ul>
       </div>
     </main>
 
